@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUM_OF_ITERATIONS=1
+NUM_OF_ITERATIONS=30
 
 for ((i = 1; i <= $NUM_OF_ITERATIONS; i++)); do
 
