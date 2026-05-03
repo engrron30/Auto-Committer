@@ -1,0 +1,25 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs every day at 12:00 noon UTC
+  workflow_dispatch:        # Allows manual trigger from the GitHub Actions UI
+
+permissions:
+  contents: write           # Required to push commits back to the repo
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run auto-commit script
+        run: bash auto-commit-git.sh
