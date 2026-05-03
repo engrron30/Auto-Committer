@@ -2,8 +2,11 @@ name: Auto Commit
 
 on:
   schedule:
-    - cron: '0 12 * * *'    # Runs every day at noon UTC
-  workflow_dispatch:        # Also lets you trigger it manually from the GitHub UI
+    - cron: '0 12 * * *'  # Runs every day at 12:00 noon UTC
+  workflow_dispatch:        # Allows manual trigger from the GitHub Actions UI
+
+permissions:
+  contents: write           # Required to push commits back to the repo
 
 jobs:
   auto-commit:
@@ -15,8 +18,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "engrron30"
-          git config user.email "ronaldtorresrosete30@gmail.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run auto-commit script
-        run: bash auto-commit.sh
+        run: bash Scripts/auto-commit.sh
