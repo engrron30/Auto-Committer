@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUM_OF_ITERATIONS=1
+NUM_OF_ITERATIONS=15
 
 create_file() {
     echo "######################################################"
@@ -23,12 +23,14 @@ commit_to_remote_repo() {
     echo ""
 }
 
-for ((i = 1; i <= $NUM_OF_ITERATIONS; i++)); do
+main() {
+    for ((i = 1; i <= $NUM_OF_ITERATIONS; i++)); do
 
-    create_file $i
-    commit_to_remote_repo $i
+        create_file $i
+        commit_to_remote_repo $i
 
-    delete_file $i
-    commit_to_remote_repo $i
+        delete_file $i
+        commit_to_remote_repo $i
 
-done
+    done
+}
