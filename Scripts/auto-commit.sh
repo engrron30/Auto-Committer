@@ -30,7 +30,7 @@ commit_to_remote_repo() {
         commit_message_verb="Remove"
     fi
 
-    if [ "$SKIP_DEBUG" = true ]; then
+    if [ "$SKIP_COMMIT" = true ]; then
         echo "COMMIT_MSG: $commit_message_verb dummy_file_$i.dat"
         return
     fi
