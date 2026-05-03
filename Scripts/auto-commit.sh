@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SKIP_COMMIT=true
+SKIP_COMMIT=false
 NUM_OF_ITERATIONS=15
 file_created=false
 
@@ -32,6 +32,7 @@ commit_to_remote_repo() {
 
     if [ "$SKIP_COMMIT" = true ]; then
         echo "COMMIT_MSG: $commit_message_verb dummy_file_$i.dat"
+        echo ""
         return
     fi
 
