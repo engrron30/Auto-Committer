@@ -53,4 +53,4 @@ main() {
     done
 }
 
-main()
+main
