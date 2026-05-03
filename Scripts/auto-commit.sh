@@ -52,3 +52,5 @@ main() {
 
     done
 }
+
+main()
