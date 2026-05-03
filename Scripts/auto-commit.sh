@@ -1,5 +1,6 @@
 #!/bin/bash
 
+SKIP_COMMIT=true
 NUM_OF_ITERATIONS=15
 file_created=false
 
@@ -27,6 +28,11 @@ commit_to_remote_repo() {
         commit_message_verb="Add"
     else
         commit_message_verb="Remove"
+    fi
+
+    if [ "$SKIP_DEBUG" ]
+        echo "COMMIT_MSG: $commit_message_verb dummy_file_$i.dat"
+        return
     fi
 
     git add ./
