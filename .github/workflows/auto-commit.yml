@@ -22,4 +22,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Run auto-commit script
-        run: bash auto-commit-git.sh
+        run: bash Scripts/auto-commit.sh

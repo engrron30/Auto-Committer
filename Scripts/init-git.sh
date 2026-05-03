@@ -3,11 +3,16 @@
 # file will initialize your empty repo with a README.md.
 
 GIT_CMD=git
-GIT_USR=engrron30
-GIT_RPO=Auto-Commit-Script
 GIT_BRN=main
+GIT_RPO=Auto-Committer
 
-echo "# $GIT_RPO" >>README.md
+# Put your git credentials here. Change it based on you
+# Git account.
+
+GIT_USR=engrron30
+GIT_EML=ronaldtorresrosete30@gmail.com
+
+echo "# $GIT_RPO" >> README.md
 $GIT_CMD init
 $GIT_CMD add README.md
 $GIT_CMD commit -m "first commit"
